@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
+
+:root{
+    --color-discount:#c8d200;
+}
+*{
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+.img-product{
+    height:300px;
+    border-radius:20px;
+}
+
+.badge{
+    background-color: var(--color-discount);
+}
+.cat-name{
+    margin-bottom: 2px;
+    padding-bottom: 2px;
+}
+.card-desc{
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 1px;
+    padding-bottom: 1px;
+}

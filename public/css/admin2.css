@@ -1,0 +1,11 @@
+.info-card{
+    height: 70px;
+    align-items: center;
+}
+.bg-orange{
+    background-color: #ff9800;
+}
+
+.bg-yellow{
+    background-color: #dec103;
+}

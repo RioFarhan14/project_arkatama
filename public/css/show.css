@@ -1,0 +1,25 @@
+:root{
+    --grey: #EEE3CB;
+}
+.img{
+    height: 500px;
+    border-radius: 15px;
+}
+.card-img-relate{
+    height: 200px;
+}
+
+.card-info{
+    background-color: var(--grey);
+}
+
+.price{
+    font-size: 30px;
+}
+
+.quantity{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
