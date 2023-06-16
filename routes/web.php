@@ -57,7 +57,7 @@ Route::middleware('auth')->group(function() {
     //akses admin & staff
     Route::middleware('role:Admin|Staff')->group(function() {
     //Product CRUD
-    Route::get('/Product', [productController::class, 'index'])->name('product.index');
+    Route::get('/Product', [ProductController::class, 'index'])->name('product.index');
     Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
     Route::post('/product', [ProductController::class, 'store'])->name('product.store');
     Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');

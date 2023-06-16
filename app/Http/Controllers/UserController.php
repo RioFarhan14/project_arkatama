@@ -15,7 +15,7 @@ class UserController extends Controller
         $users = User::with('role')->get();
 
         // Tampilkan halaman index
-        return view('User.index', compact('users'));
+        return view('user.index', compact('users'));
     }
 
     public function create()
