@@ -14,6 +14,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,8 @@ Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.authenticate');
-route::get('/forgetpassword', [ForgetpasswordController::class, 'index'])->name('forgetpassword');
+Route::get('/forgetpassword', [ForgetpasswordController::class, 'index'])->name('forgetpassword');
+Route::put('/forgetpassword',[ForgetpasswordController::class,'forget'])->name('forget');
 
 Route::middleware('auth')->group(function() {
     //logout
@@ -41,6 +43,9 @@ Route::middleware('auth')->group(function() {
     Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
     Route::post('/dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::get('/dashboard/info/{id}',[DashboardController::class, 'info'])->name('dashboard.info');
+    Route::get('/dashboard/order/{id}',[DashboardController::class, 'order'])->name('dashboard.order');
+    Route::put('/dashboard/{id}',[DashboardController::class, 'confirm'])->name('dashboard.confirm');
+    Route::get('/history',[DashboardController::class,'history'])->name('history.admin');
     //cart
     Route::post('/dashboard',[CartController::class,'addToCart'])->name('addtocart');
     //checkout
@@ -48,6 +53,7 @@ Route::middleware('auth')->group(function() {
     Route::delete('dashboard/checkout/{id}',[CartController::class,'destroy'])->name('checkout.delete');
     Route::post('dashboard/status/{total}',[CheckoutController::class,'checkout'])->name('checkout.confirm');
     Route::get('dashboard/status/{orderId}',[CheckoutController::class, 'status'])->name('status');
+    Route::get('/history/user',[CheckoutController::class,'history'])->name('history.user');
     //akses admin & staff
     Route::middleware('role:Admin|Staff')->group(function() {
     //Product CRUD

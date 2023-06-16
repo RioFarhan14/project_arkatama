@@ -36,7 +36,7 @@
                                 <hr class="dropdown-divider" />
                             </li>
                             <li><a class="dropdown-item" href="#sale">Sale Items</a></li>
-                            <li><a class="dropdown-item" href="#popular">Popular items</a></li>
+                            <li><a class="dropdown-item" href="#popular">Best Sellers</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -111,6 +111,51 @@
                                 <!-- Product price-->
                                 <span class="text-muted text-decoration-line-through">Rp.{{ $sale_item->price }}</span>
                                 Rp.{{ $sale_item->final_price }}
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-end"><a class="btn btn-outline-dark" href="{{ route('login') }}"><i class="bi-cart-fill me-1 m-1"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    @endif
+    <!-- section Popular items-->
+    @if($popular_items->count() > 0)
+    <section class="py-3" id="popular">
+        <div class="container-fluid px-5 mt-5">
+            <h2 class="fw-bolder mb-4">Best Sellers</h2>
+            <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-start">
+                @foreach ($popular_items as $popular)
+                <div class="mb-5">
+                    <div class="bg-light rounded">
+                        <!-- Sale badge-->
+                        <div class="badge p-3 m-1 position-absolute">{{ $popular->discount }}%</div>
+                        <!-- Product image-->
+                        <img class="card-img-top img-product px-2 pt-2" src="{{ asset('storage/product/' . $popular->image) }}"
+                            alt="{{ $popular->image }}" />
+                        <!-- Product details-->
+                        <div class="card-body pt-2 px-3">
+                            <div class="text-start">
+                                <!-- Product Category -->
+                                <p class="text-secondary cat-name">{{ $popular->category->name }}</p>
+                                <!-- Product name-->
+                                <h5 class="fw-bolder card-desc">{{ $popular->name }}</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-start small text-warning mb-1">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <!-- Product price-->
+                                <span class="text-muted text-decoration-line-through">Rp.{{ $popular->price }}</span>
+                                Rp.{{ $popular->final_price }}
                             </div>
                         </div>
                         <!-- Product actions-->

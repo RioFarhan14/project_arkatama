@@ -84,15 +84,14 @@
                     <div class="card-body">
                         <form action="{{ route('dashboard') }}" method="GET">
                             @csrf
-                            {{-- <div class="form-group mb-2">
+                            <div class="form-group mb-2">
                                 <label class="mb-2" for="sort">Sort by:</label>
                                 <select class="form-control" id="sort" name="sort">
-                                    <option value="" selected>All</option>
-                                    <option value="price">Price</option>
-                                    <option value="popularity">Popularity</option>
-                                    <option value="new">New</option>
+                                    <option value="" {{ request('sort') == '' ? 'selected' : '' }}>All</option>
+                                    <option value="sold_out" {{ request('sort') == 'sold_out' ? 'selected' : '' }}>Popularity</option>
+                                    <option value="new" {{ request('sort') =='new' ? 'selected' : '' }}>New</option>
                                 </select>
-                            </div> --}}
+                            </div>                            
                             <div class="form-group mb-2">
                                 <label class="mb-2" for="category">Category:</label>
                                 <select class="form-control" name="category" id="category">

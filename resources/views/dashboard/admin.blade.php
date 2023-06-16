@@ -24,7 +24,7 @@
             </div>
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-success text-white mb-4">
-                    <div class="card-body info-card row"><div class="col-10"><i class="fa-solid fa-cart-shopping"></i> Product terjual</div> <div class="col">1</div></div>
+                    <div class="card-body info-card row"><div class="col-10"><i class="fa-solid fa-cart-shopping"></i> Product terjual</div> <div class="col">{{ $sold_out }}</div></div>
                 </div>
             </div>
         </div>
@@ -32,17 +32,24 @@
             <span class="py-3">Pesanan</span>
         <div class="card mb-4">
             <div class="card-body">
-                <table id="dataTable" class="table table-striped">
+                <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Nama</th>
-                            <th>Produk</th>
-                            <th>Jumlah</th>
+                            <th>Time order</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($orders as $order)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $order->user->name }}</td>
+                            <td>{{ $order->created_at}}</td>
+                            <td><a href="{{ route('dashboard.order',$order->id) }}" class="btn btn-primary">Lihat</a></td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

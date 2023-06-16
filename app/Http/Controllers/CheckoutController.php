@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Cartitem;
 use App\Models\Order;
+use App\Models\Orderitem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -70,4 +71,13 @@ class CheckoutController extends Controller
     $orderItems = $order->orderItems;
         return view('transaction.status',compact('order', 'orderItems'));
     }
+    public function history(){
+        $userId = auth()->user()->id;
+        $cartId = Cart::where('user_id', $userId)->value('id');
+        $cartitemsId = CartItem::where('cart_id', '=', $cartId)->count();
+        $orders = Order::with('orderitems')->where('user_id', $userId)->get();
+        
+        return view('transaction.historyuser', compact('orders','cartitemsId'));
+    }
+    
 }

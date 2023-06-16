@@ -45,6 +45,7 @@
                         <i class="bi-person-fill me-1"></i> {{ Auth::user()->name }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a href="{{ route('history.user') }}" class="dropdown-item">History Transaksi</a></li>
                           <li>
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf

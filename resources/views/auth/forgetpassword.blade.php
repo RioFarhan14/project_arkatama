@@ -17,28 +17,46 @@
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-11 col-md-8 col-lg-6 col-xl-5">
                         <div class="card bg-orange text-white rounded-3">
-                            <div class="card-body p-4 text-center">
+                            <div class="card-body p-4">
                                 <div class="mb-md-4 mt-md-3">
-                                    <h2 class="fw-bold mb-3 text-uppercase">Forget Password</h2>
-                                    <div class="form-outline form-white mb-4">
-                                        <label class="form-label" for="name">Nama Lengkap</label>
-                                        <input type="name" id="name" class="form-control form-control-lg" />
-                                    </div>
-                                    <div class="form-outline form-white mb-4">
-                                        <label class="form-label" for="email">Email</label>
-                                        <input type="email" id="email" class="form-control form-control-lg" />
-                                    </div>
-                                    <div class="form-outline form-white mb-4">
-                                        <label class="form-label" for="phone">No.Telepon</label>
-                                        <input type="phone" id="phone" class="form-control form-control-lg" />
-                                    </div>
-                                    <div class="form-outline form-white mb-4">
-                                        <label class="form-label" for="password">New Password</label>
-                                        <input type="password" id="password"
-                                            class="form-control form-control-lg" />
-                                    </div>
-                                    <button class="btn btn-outline-light btn-lg px-5" type="submit">Submit</button>
-
+                                    <form action="{{ route('forget') }}" method="post">
+                                        @csrf
+                                        @method('PUT')
+                                        <h2 class="fw-bold mb-3 text-uppercase">Lupa Kata Sandi</h2>
+                                        @error('data')
+                                                <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" for="name">Nama</label>
+                                            <input type="name" id="name" class="form-control form-control-lg" name="name" />
+                                            @error('name')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" for="email">Email</label>
+                                            <input type="email" id="email" class="form-control form-control-lg" name="email" />
+                                            @error('email')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" for="phone">No.Telepon</label>
+                                            <input type="phone" id="phone" maxlength="12" class="form-control form-control-lg" name="phone" />
+                                            @error('phone')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" for="password">Kata Sandi Baru</label>
+                                            <input type="password" id="password" class="form-control form-control-lg" name="password" />
+                                            @error('password')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <a href="{{ route('login') }}" class="btn btn-secondary">Kembali</a>
+                                        <button class="btn btn-outline-light" type="submit">Submit</button>
+                                    </form>                                                                     
                                 </div>
                             </div>
                         </div>

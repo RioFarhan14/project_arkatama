@@ -17,7 +17,7 @@
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-11 col-md-8 col-lg-6 col-xl-5">
                         <div class="card bg-orange text-white rounded-3">
-                            <div class="card-body p-4 text-center">
+                            <div class="card-body p-4">
                                 <div class="mb-md-4 mt-md-3">
                                     <form action="{{ route('register.store') }}" method="POST">
                                         @csrf    
@@ -38,7 +38,7 @@
                                     </div>
                                     <div class="form-outline form-white mb-4">
                                         <label class="form-label" for="phone">No.Telepon</label>
-                                        <input type="phone" id="phone" name="phone" value="{{ old('phone') }}" class="form-control form-control-lg @error('phone') is-invalid @enderror" />
+                                        <input type="phone" maxlength="12" id="phone" name="phone" value="{{ old('phone') }}" class="form-control form-control-lg @error('phone') is-invalid @enderror" />
                                         @error('phone')
                                         <small class="text-danger">{{ $message }}</small>
                                         @enderror

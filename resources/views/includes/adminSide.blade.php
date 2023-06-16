@@ -13,7 +13,7 @@
                 Slider
                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
             </a>
-            <a class="nav-link collapsed" href="{{ route('slider.index') }}">
+            <a class="nav-link collapsed" href="{{ route('history.admin') }}">
                 <div class="sb-nav-link-icon"><i class="fa-solid fa-images"></i></i></div>
                 History Transaksi
                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
