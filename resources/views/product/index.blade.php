@@ -30,7 +30,7 @@
                             <td>Rp. {{ number_format($product->price, 0, 2) }}</td>
                             <td>Rp. {{ number_format($product->final_price, 0, 2) }}</td>
                             <td>
-                                <img src="{{ asset('storage/product/' . $product->image) }}" class="img-fluid"
+                                <img src="{{ asset('dataku/product/' . $product->image) }}" class="img-fluid"
                                     style="max-width: 100px; max-height: 50px" alt="{{ $product->image }}">
                             </td>
                             <td>

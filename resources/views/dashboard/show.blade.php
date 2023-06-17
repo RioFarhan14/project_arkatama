@@ -3,7 +3,7 @@
 	<div class="container mx-lg-5 my-lg-5 card-info rounded">
         <section class="row px-lg-3 py-lg-3">
             <div class="col-lg-6">
-                <img src="{{ asset('storage/product/'. $product->image) }}" alt="{{ $product->image }}" class="img col-lg-12">
+                <img src="{{ asset('dataku/product/'. $product->image) }}" alt="{{ $product->image }}" class="img col-lg-12">
             </div>
             <div class="col-lg-6">
                 <h1 class="text-start">{{ $product->name }}</h1>
@@ -45,7 +45,7 @@
                             <div class="badge p-3 m-1 position-absolute">{{ $product->discount }}%</div>
                             @endif
                             <!-- Product image-->
-                            <img class="card-img-top px-2 pt-2 card-img-relate" src="{{ asset('storage/product/' . $product->image) }}"
+                            <img class="card-img-top px-2 pt-2 card-img-relate" src="{{ asset('dataku/product/' . $product->image) }}"
                                 alt="{{ $product->image }}" />
                             <!-- Product details-->
                             <div class="card-body pt-2 px-3">

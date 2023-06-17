@@ -38,7 +38,7 @@
             @foreach ($orderItems as $item)
             <a class="col-11 col-xl-12 col-xl-12 mx-2 mt-1 btn border border-dark">
                 <div class="row">
-                    <img src="{{ asset('storage/product/'. $item->product->image) }}" alt="{{ $item->product->image}}" class="col-2 col-xl-1 img-card">
+                    <img src="{{ asset('dataku/product/'. $item->product->image) }}" alt="{{ $item->product->image}}" class="col-2 col-xl-1 img-card">
                 <div class="col-9 col-lg-10 text-start child-text">
                         <div class="row">
                             <div class="col-7 col-sm-9 col-xl-11 fw-bold">
