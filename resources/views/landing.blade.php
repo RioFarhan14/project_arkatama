@@ -60,7 +60,7 @@
             <div class="carousel-inner">
                 @foreach ($sliders as $slider)
                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}" data-bs-interval="10000">
-                    <img src="{{ asset('dataku/slider/' . $slider->image) }}" class="container-fluid" style="height: 450px; border-radius:30px;"
+                    <img src="{{ asset('storage/slider/' . $slider->image) }}" class="container-fluid" style="height: 450px; border-radius:30px;"
                     alt="{{ $slider->image }}">
                 </div>
                 @endforeach
@@ -91,7 +91,7 @@
                         <!-- Sale badge-->
                         <div class="badge p-3 m-1 position-absolute">{{ $sale_item->discount }}%</div>
                         <!-- Product image-->
-                        <img class="card-img-top img-product px-2 pt-2" src="{{ asset('dataku/product/' . $sale_item->image) }}"
+                        <img class="card-img-top img-product px-2 pt-2" src="{{ asset('storage/product/' . $sale_item->image) }}"
                             alt="{{ $sale_item->image }}" />
                         <!-- Product details-->
                         <div class="card-body pt-2 px-3">
@@ -136,7 +136,7 @@
                         <!-- Sale badge-->
                         <div class="badge p-3 m-1 position-absolute">{{ $popular->discount }}%</div>
                         <!-- Product image-->
-                        <img class="card-img-top img-product px-2 pt-2" src="{{ asset('dataku/product/' . $popular->image) }}"
+                        <img class="card-img-top img-product px-2 pt-2" src="{{ asset('storage/product/' . $popular->image) }}"
                             alt="{{ $popular->image }}" />
                         <!-- Product details-->
                         <div class="card-body pt-2 px-3">
@@ -193,7 +193,7 @@
                                     <div class="badge p-3 m-1 position-absolute">{{ $product->discount }}%</div>
                                     @endif
                                     <!-- Product image-->
-                                    <img class="card-img-top img-product px-2 pt-2" src="{{ asset('dataku/product/' . $product->image) }}"
+                                    <img class="card-img-top img-product px-2 pt-2" src="{{ asset('storage/product/' . $product->image) }}"
                                         alt="{{ $product->image }}" />
                                     <!-- Product details-->
                                     <div class="card-body pt-2 px-3">

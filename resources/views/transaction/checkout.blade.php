@@ -14,7 +14,7 @@
                 </div>
                 @foreach ($products as $item)
                 <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded">
-                    <div class="d-flex flex-row"><img class="rounded" src="{{ asset('dataku/product/'. $item->product->image) }}" width="40" alt="{{$item->product->image}}">
+                    <div class="d-flex flex-row"><img class="rounded" src="{{ asset('storage/product/'. $item->product->image) }}" width="40" alt="{{$item->product->image}}">
                         <div class="ms-2"><span class="font-weight-bold d-block">{{ $item->product->name }}</span><span>Item {{ $item->quantity }}</span>
                         </div>
                     </div>

@@ -5,7 +5,7 @@
         <div class="carousel-inner">
             @foreach ($sliders as $slider)
             <div class="carousel-item {{ $loop->first ? 'active' : '' }}" data-bs-interval="10000">
-                <img src="{{ asset('dataku/slider/' . $slider->image) }}" class="container-fluid"
+                <img src="{{ asset('storage/slider/' . $slider->image) }}" class="container-fluid"
                     style="height: 450px; border-radius:30px;" alt="{{ $slider->image }}">
             </div>
             @endforeach
@@ -37,7 +37,7 @@
                     <div class="badge p-3 m-1 position-absolute">{{ $sale_item->discount }}%</div>
                     <!-- Product image-->
                     <img class="card-img-top img-product px-2 pt-2"
-                        src="{{ asset('dataku/product/' . $sale_item->image) }}" alt="{{ $sale_item->image }}" />
+                        src="{{ asset('storage/product/' . $sale_item->image) }}" alt="{{ $sale_item->image }}" />
                     <!-- Product details-->
                     <div class="card-body pt-2 px-3">
                         <div class="text-start">
@@ -137,7 +137,7 @@
                             @endif
                             <!-- Product image-->
                             <img class="card-img-top img-product px-2 pt-2"
-                                src="{{ asset('dataku/product/' . $product->image) }}" alt="{{ $product->image }}" />
+                                src="{{ asset('storage/product/' . $product->image) }}" alt="{{ $product->image }}" />
                             <!-- Product details-->
                             <div class="card-body pt-2 px-3">
                                 <div class="text-start">

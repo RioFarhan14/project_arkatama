@@ -24,7 +24,7 @@
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $slider->name }}</td>
                             <td>
-                                <img src="{{ asset('dataku/slider/' . $slider->image) }}" class="img-fluid"
+                                <img src="{{ asset('storage/slider/' . $slider->image) }}" class="img-fluid"
                                     style="max-width: 100px; max-height: 50px" alt="{{ $slider->image }}">
                             </td>
 
