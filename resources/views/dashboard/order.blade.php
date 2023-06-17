@@ -41,7 +41,7 @@
                         <a href="{{ route('dashboard') }}" class="btn btn-secondary">Kembali</a>
                 </div>
                 <div class="col-1">
-                    <form action="{{ route('dashboard.confirm', $item->order_id) }}" method="POST">
+                    <form action="{{ route('dashboard.confirm', $orderitems->order_id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <button type="submit" class="btn btn-primary">Selesai</button>
