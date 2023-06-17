@@ -111,7 +111,8 @@ class DashboardController extends Controller
 
     public function order($id){
         $orderitems = Orderitem::where('order_id',$id)->get();
-        return view('dashboard.order', compact('orderitems'));
+        $order_id = $id;
+        return view('dashboard.order', compact('orderitems','order_id'));
     }
 
     public function confirm($id){
