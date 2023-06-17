@@ -60,8 +60,8 @@
             <div class="carousel-inner">
                 @foreach ($sliders as $slider)
                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}" data-bs-interval="10000">
-                    <img src="{{ asset('storage/slider/' . $slider->image) }}" class="container-fluid" style="height: 450px; border-radius:30px;"
-                    alt="{{ $slider->image }}">
+                    <img src="{{ asset('storage/slider/' . $slider->image) }}" class="container-fluid"
+                        style="height: 450px; border-radius:30px;" alt="{{ $slider->image }}">
                 </div>
                 @endforeach
             </div>
@@ -91,8 +91,8 @@
                         <!-- Sale badge-->
                         <div class="badge p-3 m-1 position-absolute">{{ $sale_item->discount }}%</div>
                         <!-- Product image-->
-                        <img class="card-img-top img-product px-2 pt-2" src="{{ asset('storage/product/' . $sale_item->image) }}"
-                            alt="{{ $sale_item->image }}" />
+                        <img class="card-img-top img-product px-2 pt-2"
+                            src="{{ asset('storage/product/' . $sale_item->image) }}" alt="{{ $sale_item->image }}" />
                         <!-- Product details-->
                         <div class="card-body pt-2 px-3">
                             <div class="text-start">
@@ -115,7 +115,8 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-end"><a class="btn btn-outline-dark" href="{{ route('login') }}"><i class="bi-cart-fill me-1 m-1"></i></a></div>
+                            <div class="text-end"><a class="btn btn-outline-dark" href="{{ route('login') }}"><i
+                                        class="bi-cart-fill me-1 m-1"></i></a></div>
                         </div>
                     </div>
                 </div>
@@ -134,10 +135,13 @@
                 <div class="mb-5">
                     <div class="bg-light rounded">
                         <!-- Sale badge-->
+                        @if($popular->discount > 0)
+                        <!-- Sale badge-->
                         <div class="badge p-3 m-1 position-absolute">{{ $popular->discount }}%</div>
+                        @endif
                         <!-- Product image-->
-                        <img class="card-img-top img-product px-2 pt-2" src="{{ asset('storage/product/' . $popular->image) }}"
-                            alt="{{ $popular->image }}" />
+                        <img class="card-img-top img-product px-2 pt-2"
+                            src="{{ asset('storage/product/' . $popular->image) }}" alt="{{ $popular->image }}" />
                         <!-- Product details-->
                         <div class="card-body pt-2 px-3">
                             <div class="text-start">
@@ -160,7 +164,8 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-end"><a class="btn btn-outline-dark" href="{{ route('login') }}"><i class="bi-cart-fill me-1 m-1"></i></a></div>
+                            <div class="text-end"><a class="btn btn-outline-dark" href="{{ route('login') }}"><i
+                                        class="bi-cart-fill me-1 m-1"></i></a></div>
                         </div>
                     </div>
                 </div>
@@ -176,15 +181,18 @@
             <div id="carouselExampleIndicators" class="carousel slide row">
                 <div class=" justify-content-start mb-4 gap-2 ">
                     @foreach($categories as $category)
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $loop->iteration - 1 }}"
-                        class="button-cat fw-bolder p-2 button-{{ $loop->first ? 'active' : '' }}" aria-current="{{ $loop->first ? 'true' : '' }}"
-                        aria-label="Slide">{{ $category->name }}</button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="{{ $loop->iteration - 1 }}"
+                        class="button-cat fw-bolder p-2 button-{{ $loop->first ? 'active' : '' }}"
+                        aria-current="{{ $loop->first ? 'true' : '' }}" aria-label="Slide">{{ $category->name
+                        }}</button>
                     @endforeach
                 </div>
                 <div class="carousel-inner">
                     @foreach($categories as $category)
                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-start">
+                        <div
+                            class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-start">
                             @foreach($productsByCategory[$category->name] as $product)
                             <div class="col mb-5">
                                 <div class="card">
@@ -193,7 +201,8 @@
                                     <div class="badge p-3 m-1 position-absolute">{{ $product->discount }}%</div>
                                     @endif
                                     <!-- Product image-->
-                                    <img class="card-img-top img-product px-2 pt-2" src="{{ asset('storage/product/' . $product->image) }}"
+                                    <img class="card-img-top img-product px-2 pt-2"
+                                        src="{{ asset('storage/product/' . $product->image) }}"
                                         alt="{{ $product->image }}" />
                                     <!-- Product details-->
                                     <div class="card-body pt-2 px-3">
@@ -212,14 +221,17 @@
                                             </div>
                                             <!-- Product price-->
                                             @if($product->discount > 0)
-                                            <span class="text-muted text-decoration-line-through">Rp.{{ $product->price }}</span>
+                                            <span class="text-muted text-decoration-line-through">Rp.{{ $product->price
+                                                }}</span>
                                             @endif
                                             <span>Rp.{{ $product->final_price }}</span>
                                         </div>
                                     </div>
                                     <!-- Product actions-->
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-end"><a href="{{ route('login') }}" class="btn btn-outline-dark" href="#"><i class="bi-cart-fill me-1 m-1"></i></a></div>
+                                        <div class="text-end"><a href="{{ route('login') }}"
+                                                class="btn btn-outline-dark" href="#"><i
+                                                    class="bi-cart-fill me-1 m-1"></i></a></div>
                                     </div>
                                 </div>
                             </div>
@@ -228,18 +240,18 @@
                     </div>
                     @endforeach
                 </div>
-                
+
             </div>
         </div>
     </section>
-    
+
     <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
         </div>
     </footer>
-    <script src="{{asset("js/scripts.js") }}"></script>
+    <script src="{{asset(" js/scripts.js") }}"></script>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
