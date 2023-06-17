@@ -21,7 +21,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ count($order->orderItems) }}</td>
-                            <td>Rp. {{ $order->orderItems->sum('quantity') }}</td>
+                            <td>{{ $order->orderItems->sum('quantity') }}</td>
                             <td>Rp. {{ $order->total_price }}</td>
                             <td>{{ $order->status }}</td>
                             <td><a href="{{ route('status', $order->id) }}" class="btn btn-primary">Lihat</a></td>
