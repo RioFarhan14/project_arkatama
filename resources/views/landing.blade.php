@@ -251,7 +251,7 @@
             <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
         </div>
     </footer>
-    <script src="{{asset(" js/scripts.js") }}"></script>
+    <script src="{{asset("js/scripts.js") }}"></script>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
