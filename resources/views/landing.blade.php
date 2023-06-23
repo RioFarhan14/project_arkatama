@@ -247,8 +247,39 @@
 
     <!-- Footer-->
     <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+        <div class="container text-md-left">
+            <div class="row text-md-left">
+                
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Speedybites.id</h5>
+                    <p class="text-white">Speedybites.id merupakan sebuah website penjualan makanan cepat saji.</p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 text-white">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+                    <p>
+                        <i class="fas fa-home mr-3"></i > Depok
+                    </p>
+                    <p>
+                    <i class="fas fa-envelope mr-3"></i > speedybites@gmail.com
+                    </p>
+                    <p>
+                        <i class="fas fa-phone mr-3"></i > 012345678908
+                    </p>
+                    <p>
+                        <i class="fa fa-print mr-3"></i > +16 4759 3245 17
+                    </p>
+                </div>
+            </div>
+
+            <hr class="mb-4">
+            <div class="d-flex justify-content-center">
+            <div class="text-white">
+                <p> Copyright &copy; 2023 All rights reserved by:
+                        <a href="#" style="text-decoration: none">
+                            <strong class="text-warning">Speedy Bites</strong>
+                    </a></p>
+            </div>
+        </div>
         </div>
     </footer>
     <script src="{{asset("js/scripts.js") }}"></script>
